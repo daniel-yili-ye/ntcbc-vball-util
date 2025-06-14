@@ -81,7 +81,7 @@ export default function Home() {
           SELECT 
             'Admin 600 ' || generate_series as name,
             'admin-600-' || generate_series || '@ntcbc.ca' as email,
-            '2000-01-01T00:00:00.000Z' as created_at,
+            '2000-01-01T05:00:00.000Z' as created_at,
             'approved' as approval_status
           FROM generate_series(1, ${session1Admins});
         `);
@@ -93,7 +93,7 @@ export default function Home() {
           SELECT 
             'Admin 815 ' || generate_series as name,
             'admin-815-' || generate_series || '@ntcbc.ca' as email,
-            '2000-01-01T00:00:00.000Z' as created_at,
+            '2000-01-01T05:00:00.000Z' as created_at,
             'approved' as approval_status
           FROM generate_series(1, ${session2Admins});
         `);
