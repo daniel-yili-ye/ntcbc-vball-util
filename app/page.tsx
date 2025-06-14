@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import * as duckdb from "@duckdb/duckdb-wasm";
 import { SessionTable } from "@/components/ui/session-table";
 import { SessionCard } from "@/components/ui/session-card";
+import { toast } from "sonner";
 
 interface SessionResult {
   session_id: string;
@@ -33,6 +34,11 @@ export default function Home() {
     } else {
       setSession2File(file);
     }
+
+    // Show success toast with filename
+    toast.success(`File uploaded successfully: ${file.name}`, {
+      description: `Session ${session} data ready for processing`,
+    });
   };
 
   const processData = async () => {
@@ -196,7 +202,9 @@ export default function Home() {
 
   return (
     <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Volleyball Session Manager</h1>
+      <h1 className="text-2xl font-bold mb-4">
+        🏐 NTCBC Volleyball Session Manager
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <SessionCard

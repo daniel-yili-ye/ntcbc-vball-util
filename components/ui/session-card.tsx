@@ -38,18 +38,18 @@ export const SessionCard = ({
               <label className="text-sm">Number of Admins</label>
               <Input
                 type="number"
-                value={sessionAdmins}
-                onChange={(e) => setSessionAdmins(Number(e.target.value))}
-                min="0"
+                value={sessionAdmins || ""}
+                onChange={(e) => setSessionAdmins(Number(e.target.value) || 0)}
+                placeholder="0"
               />
             </div>
             <div>
               <label className="text-sm">Session Cap</label>
               <Input
                 type="number"
-                value={sessionCap}
-                onChange={(e) => setSessionCap(Number(e.target.value))}
-                min="0"
+                value={sessionCap || ""}
+                onChange={(e) => setSessionCap(Number(e.target.value) || 0)}
+                placeholder="0"
               />
             </div>
           </div>
